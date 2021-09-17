@@ -95,7 +95,7 @@ def model_train(X, y, out, batch_size=BATCH_SIZE, epochs=100):
 
         net = Models()
 
-        # 3个回调函数
+        # callback
         best_saving = ModelCheckpoint(filepath='%s.%d.h5' % (out, i), monitor='val_loss', verbose=1,
                                       save_best_only=True)
         early_stopping = EarlyStopping(monitor='val_loss', patience=25)
